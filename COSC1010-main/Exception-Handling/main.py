@@ -1,4 +1,4 @@
-#
+#HEADS UP: THIS IS WHAT I ACTUALLY AM SUBMITTING. THe other python file was experimenting (as in discord)
 # Christian Espinoza 
 # 10/22/2024
 # Average of Numbers Programming Project
@@ -6,34 +6,44 @@
 #
 # Use comments liberally throughout the program. 
 
-
 def main():
+
+    #We first try to open the desired text file.
     #Variable referencing the file object. While opens the file.
-    theNumbersGiven = open(r'numbers.txt', 'r')
-
-    average = 0 #Declares the average variable.
-
-    theTotalForNumbers = 0 # Declares the variable for the total.
-
-    totalLines = 0 #Declares the variable that counts the lines.
-
-    for theAmountOfLines in theNumbersGiven: #Starts the loop to check each line iteration.
-
-        print(theAmountOfLines) #Print the line in the numbers file.
-
-        changingData = float(theAmountOfLines) #Change the data from a string to a float. 
-
-        theTotalForNumbers += changingData #Add the newly cconverted number to the total.
-        totalLines += 1 #Add one to the total amount of lines checked.
-    theNumbersGiven.close()
-    average = theTotalForNumbers/totalLines #Finally, take the total variable and divide that with the amount of lines.
-    print('The average of the Numbers is: ',  average) #Print the results. 
-
-    try: 
-        main()
+    try:
+        theNumbersGiven = open(r'numbers.txt', 'r')
     except IOError:
+        #We print out what had happened.
         print("The File is not connected to the program")
-    except ValueError:
-        print("Invalid output is present in the file. A line contains not a number. ")
-    
+        #we then return back into the program outside of the function.
+        return 
+    average = 0 #Declare the average variable.
+
+    theTotalForNumbers = 0 #Declare the accumulator/total.
+
+    totalLines = 0 #Another accumulator that adds up all the lines.
+
+    for theAmountOfLines in theNumbersGiven: #A variable that goes through each iteration.
+
+        print(theAmountOfLines) #Prints the supposed number.
+
+        #Another try statement that checks if the conversion produces an error.
+        try:           
+            changingData = float(theAmountOfLines)
+        #If the exception does occur we print out a warning.
+        except ValueError:  
+            print("The value in the line is NOT A NUMBER")
+            return
+        
+        theTotalForNumbers += changingData #Add the converted number to the total.
+        totalLines += 1 #Add 1 as we are checking a new line.
+
+    theNumbersGiven.close() #Closes the file.
+    average = theTotalForNumbers/totalLines #Gets the average.
+    print('The average of the Numbers is: ',  average) #Prints the average.
+
+
 main()
+# I had a misunderstanding of the try except statement. Statements in the try clause are actually executed. 
+# Another misunderstanding is that the exceptions are actual error codes and we insert an exception's name
+#in the except clause if we encounter such exception as described. 

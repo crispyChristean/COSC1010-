@@ -2,6 +2,10 @@
 
  Write a program that simulates a Magic 8 Ball, which is a fortune telling toy that displays a random response to a yes or no question. In the student sample programs for this book, you will find a text file named 8_ball_responses.txt. The file contains 12 responses, such as “I don’t think so”, “Yes, of course!”, “I’m not sure”, and so forth. The program should read the responses from the file into a list. It should prompt the user to ask a question, then display one of the responses, randomly selected from the list. The program should repeat until the user is ready to quit.
 
+* Going to have to integrate user input (put a sentinel)
+* Potentially 
+* Going to have to import random 
+* Going to have to link to a file
  Contents of 8_ball_responses.txt:
  ```
  Yes, of course!
