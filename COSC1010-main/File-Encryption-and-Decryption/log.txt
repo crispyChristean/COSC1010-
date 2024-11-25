@@ -1,0 +1,6 @@
+* OKAY SO HUGE BREAKTHROUGH, 
+
+Basically here's what the code needs to documents
+
+
+Have a for loop that goes through each line of 
