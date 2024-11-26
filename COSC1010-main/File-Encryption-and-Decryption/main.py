@@ -38,6 +38,7 @@ def main():
     #Select the file object and write out the content of the converted text (Which values are determined fromm the returned values.)
     conversionFile.write(result)
 
+    print(result)
 #Second part of the program. No need for arguments since we're not passing anything, the main program just deletes file contents to re-write to.
 def convert():
     #Ask the user to select a file to encrypt (which will be use to encrypt the newly deleted file in the main function)
@@ -60,6 +61,7 @@ def convert():
                 result+=encryptionConversion.keys[character] #If so it will implement the key instead. 
             else: #If not follow the original code. 
                 result+=encryptionConversion[character] 
+
 
     return result
 
